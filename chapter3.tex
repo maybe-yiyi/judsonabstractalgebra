@@ -1,0 +1,318 @@
+\documentclass[11pt]{article}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\pagestyle{fancy}
+\fancyhead[l]{Yiyoung Liu}
+\fancyhead[c]{Abstract Algebra: Theory and Applications}
+\fancyhead[r]{Judson}
+\renewcommand{\headrulewidth}{0.2pt}
+\setlength{\headheight}{15pt}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newcommand{\exercise}[1]{\textbf{\textit{Exercise #1.}}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\group}[2]{(#1, #2)}
+
+\begin{document}
+\section*{Chapter 3}
+\exercise{1}
+\begin{enumerate}[(a)]
+	\item $x = 7k + 3$ for some $k \in \Z$.
+	\item $x = 23k + 7$ for some $k \in \Z$.
+	\item $x = 26k + 18$ for some $k \in \Z$.
+	\item $x = 5k + 2$ for some $k \in \Z$.
+	\item $x = 6k + 5$ for some $k \in \Z$.
+	\item There are no $x \in \Z$ satisfying this equivalence.
+\end{enumerate}
+\exercise{2}
+\begin{enumerate}[(a)]
+	\item Not a group, there is no identity element.
+	\item Is a group, identity is $a$, every element is its own inverse, table is associative and closed.
+	\item Is a group, identity is $a$, $a^{-1} = a$, $b^{-1} = d$, $c^{-1} = c$, $d^{-1} = b$, associative and commutative.
+	\item Not a group, identity is $a$ but $d$ has no inverse.
+\end{enumerate}
+\exercise{3} \\
+Symmetries of a rectangle:
+\begin{itemize}
+	\item $e$: do nothing
+	\item $\rho$: rotate $180^\circ$
+	\item $\mu_1$: flip horizontally
+	\item $\mu_2$: flip vertically
+\end{itemize}
+Cayley table for symmetries of a rectangle: \\
+\begin{tabular}{c|cccc}
+	$\circ$ & $e$ & $\rho$ & $\mu_1$ & $\mu_2$ \\
+	\hline
+	$e$ & $e$ & $\rho$ & $\mu_1$ & $\mu_2$ \\
+	$\rho$ & $\rho$ & $e$ & $\mu_2$ & $\mu_1$ \\
+	$\mu_1$ & $\mu_1$ & $\mu_2$ & $e$ & $\rho$ \\
+	$\mu_2$ & $\mu_2$ & $\mu_1$ & $\rho$ & $e$
+\end{tabular} \\\\
+Cayley table for $\group{\Z_4}{+}$: \\
+\begin{tabular}{c|cccc}
+	+ & 0 & 1 & 2 & 3 \\
+	\hline
+	0 & 0 & 1 & 2 & 3 \\
+	1 & 1 & 2 & 3 & 0 \\
+	2 & 2 & 3 & 0 & 1 \\
+	3 & 3 & 0 & 1 & 2
+\end{tabular} \\\\
+These two groups are not the same. There is only 1 nontrivial proper subgroup of $\group{\Z_4}{+}$, consisting of the elements 0 and 2, while there are 3 nontrivial proper subgroups of the symmetries of a rectangle, $H_1 = \{e, \rho\}$, $H_2 = \{e, \mu_1\}$, and $H_3 = \{e, \mu_3\}$.
+\newpage\noindent\exercise{4} \\
+Symmetries of a rhombus:
+\begin{itemize}
+	\item $e$: do nothing
+	\item $\rho$: rotate $180^\circ$
+	\item $\mu_1$: flip about the long diagonal
+	\item $\mu_2$: flip about the short diagonal
+\end{itemize}
+Cayley table for symmetries of a rhombus: \\
+\begin{tabular}{c|cccc}
+	$\circ$ & $e$ & $\rho$ & $\mu_1$ & $\mu_2$ \\
+	\hline
+	$e$ & $e$ & $\rho$ & $\mu_1$ & $\mu_2$ \\
+	$\rho$ & $\rho$ & $e$ & $\mu_2$ & $\mu_1$ \\
+	$\mu_1$ & $\mu_1$ & $\mu_2$ & $e$ & $\rho$ \\
+	$\mu_2$ & $\mu_2$ & $\mu_1$ & $\rho$ & $e$
+\end{tabular} \\\\
+Comparing with the Cayley table for symmetries of a rectangle from above, we can see that the two groups are the same. \\\\
+\exercise{5} \\
+Symmetries of a square:
+\begin{itemize}
+	\item $e$: do nothing
+	\item $\rho_1$: rotate clockwise $90^\circ$
+	\item $\rho_2$: rotate clockwise $180^\circ$
+	\item $\rho_3$: rotate clockwise $270^\circ$
+	\item $\mu_1$: flip horizontally
+	\item $\mu_2$: flip vertically
+	\item $\delta_1$: flip along diagonal $y = x$
+	\item $\delta_2$: flip along diagonal $y = -x$
+\end{itemize}
+Cayley table for symmetries of a square: \\
+\begin{tabular}{c|cccccccc}
+	$\circ$ & $e$ & $\rho_1$ & $\rho_2$ & $\rho_3$ & $\mu_1$ & $\delta_1$ & $\mu_2$ & $\delta_2$ \\
+	\hline
+	$e$ & $e$ & $\rho_1$ & $\rho_2$ & $\rho_3$ & $\mu_1$ & $\delta_1$ & $\mu_2$ & $\delta_2$ \\
+	$\rho_1$ & $\rho_1$ & $\rho_2$ & $\rho_3$ & $e$ & $\delta_1$ & $\mu_2$ & $\delta_2$ & $\mu_1$ \\
+	$\rho_2$ & $\rho_2$ & $\rho_3$ & $e$ & $\rho_1$ & $\mu_2$ & $\delta_2$ & $\mu_1$ & $\delta_1$ \\
+	$\rho_3$ & $\rho_3$ & $e$ & $\rho_1$ & $\rho_2$ & $\delta_2$ & $\mu_1$ & $\delta_1$ & $\mu_2$ \\
+	$\mu_1$ & $\mu_1$ & $\delta_2$ & $\mu_2$ & $\delta_1$ & $e$ & $\rho_3$ & $\rho_2$ & $\rho_1$ \\
+	$\delta_1$ & $\delta_1$ & $\mu_1$ & $\delta_2$ & $\mu_2$ & $\rho_1$ & $e$ & $\rho_3$ & $\rho_2$ \\
+	$\mu_2$ & $\mu_2$ & $\delta_1$ & $\mu_1$ & $\delta_2$ & $\rho_2$ & $\rho_1$ & $e$ & $\rho_3$ \\
+	$\delta_2$ & $\delta_2$ & $\mu_2$ & $\delta_1$ & $\mu_1$ & $\rho_3$ & $\rho_2$ & $\rho_1$ & $e$
+\end{tabular} \\\\
+There are 24 ways to permute 4 objects. However, not each permutation is a valid symmetry of the square, e.g. (A, C, B, D). \\\\
+\exercise{6} \\
+Multiplication table for $U(12)$:
+\begin{tabular}{c|cccc}
+	$\cdot$ & 1 & 5 & 7 & 11 \\
+	\hline
+	1 & 1 & 5 & 7 & 11 \\
+	5 & 5 & 1 & 11 & 7 \\
+	7 & 7 & 11 & 1 & 5 \\
+	11 & 11 & 7 & 5 & 1
+\end{tabular} \\\\
+\exercise{7} \\
+Let $S = \R \setminus \{-1\}$ and define $*$ on $S$ by $a * b = a + b + ab$.
+\begin{proof} $\group{S}{*}$ is an abelian group. \\
+(Closed) Addition and multiplication are closed under the reals. We will show that there are no elements $a, b \in S$ such that $a * b = -1$. \\
+Suppose for the sake of contradiction that $a, b \in S$ with $a * b = -1$. Then $a * b = a + b + ab = -1$, and rearranging and factoring gives $(a + 1)(b + 1) = 0$. This implies that either $a$ or $b$ is $-1$, which is a contradiction, since $a$ and $b$ are in $S$. Thus $S$ is closed under $*$. \\\\
+(Associative) Let $a, b, c \in S$. Then 
+\begin{align*}
+	(a * b) * c &= (a + b + ab) * c \\
+	&= (a + b + ab) + c + (ac + bc + abc) \\
+	&= a + (b + c + bc) + (ab + ac + abc) \\
+	&= a * (b + c + ab) \\
+	&= a * (b * c) 
+\end{align*}
+(Identity) The identity element is $0$. Let $a \in S$. Then $0 * a = 0 + a + 0 = a$, and $a * 0 = a + 0 + 0 = a$. \\\\
+(Inverse) Let $a \in S$. Then the inverse $a^{-1}$ is given by $a^{-1} = -\frac{a}{a + 1}$. We can see this because $a * a^{-1} = a - \frac{a}{a + 1} - \frac{a^2}{a + 1} = 0$. \\\\
+(Commutative) Let $a, b \in S$. Then $a * b = a + b + ab = b + a + ba = b * a$. \\\\
+Since $\group{S}{*}$ is closed, associative, has an identity and inverses, and is commutative, it is an abelian group.
+\end{proof}
+\noindent\exercise{8} \\
+Let $A = \begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}$ and $B = \begin{bmatrix} 2 & 1 \\ 3 & 1 \end{bmatrix}$. Then $AB = \begin{bmatrix} 8 & 3 \\ 13 & 5 \end{bmatrix}$ but $BA = \begin{bmatrix} 4 & 7 \\ 5 & 9 \end{bmatrix}$. \\\\
+\newpage\noindent\exercise{9}
+\begin{proof} The product of two matrices in $SL_2(\R)$ has determinant one.
+Let $A, B \in SL_2(\R)$ with $A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}$ and $B = \begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix}$. Then $AB = \begin{bmatrix} a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} \\ a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22}\end{bmatrix}$. \\\\
+Then \begin{align*}
+	\det(AB) &= (a_{11}b_{11} + a_{12}b_{21})(a_{21}b_{12} + a_{22}b_{22}) - (a_{11}b_{12} + a_{12}b_{22})(a_{21}b_{11} + a_{22}b_{21}) \\
+	&= (a_{11}a_{21}b_{11}b_{12} + a_{11}a_{22}b_{11}b_{22} + a_{12}a_{21}b_{12}b_{21} + a_{12}a_{22}b_{21}b_{22}) \\
+	&- (a_{11}a_{21}b_{11}b_{12} + a_{11}a_{22}b_{12}b_{21} + a_{12}a_{21}b_{11}b_{22} + a_{12}a_{22}b_{21}b_{22}) \\
+	&= a_{11}a_{22}b_{11}b_{22} + a_{12}a_{21}b_{12}b_{21} - a_{11}a_{22}b_{12}b_{21} - a_{12}a_{21}b_{11}b_{22} \\
+	&= (a_{11}a_{22} - a_{12}a_{21})(b_{11}b_{22} - b_{12}b_{21}) \\
+	&= \det(A)\det(B) \\
+	&= 1
+\end{align*}
+Since $A$ and $B$ were arbitrary, the product of two matrices in $SL_2(\R)$ has determinant one.
+\end{proof}
+\noindent\exercise{10} \\
+Let $H$ be the set of matrices of the form $\begin{bmatrix} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{bmatrix}$.
+\begin{proof} $H$ is a group under matrix multiplication. \\
+(Closed) Let $A, B \in H$ given by $A = \begin{bmatrix} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{bmatrix}$ and $B = \begin{bmatrix} 1 & x' & y' \\ 0 & 1 & z' \\ 0 & 0 & 1 \end{bmatrix}$. \\
+Then $AB = \begin{bmatrix} 1 & x + x' & y + y' + xz' \\ 0 & 1 & z + z' \\ 0 & 0 & 1 \end{bmatrix} \in H$. \\\\
+(Associative) Matrix multiplication is associative. \\\\
+(Identity) The matrix $I = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \in H$ is the identity element. From matrix multiplication, we know that $AI = IA = A$ for any $A \in H$. \\\\
+(Inverse) Let $A = \begin{bmatrix} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{bmatrix} \in H$. The inverse $A^{-1}$ is given by the matrix $\begin{bmatrix} 1 & -x & xz - y \\ 0 & 1 & -z \\ 0 & 0 & 1 \end{bmatrix}$. We can see that $AA^{-1} = \begin{bmatrix} 1 & x - x & y + xz - y - xz \\ 0 & 1 & z - z \\ 0 & 0 & 1 \end{bmatrix} = I$. \\\\
+Since $\group{H}{*}$ is closed, associative, has an identity and inverses, it is a group.
+\end{proof}
+\newpage\noindent\exercise{11} \\
+The proof that $\det(AB) = \det(A)\det(B)$ for $A, B \in GL_2(\R)$ is nearly identical to the proof in exercise 9, except that $\det(A), \det(B) \neq 1$.
+\begin{proof} $GL_2(\R)$ is closed. \\
+Let $A, B \in GL_2(\R)$. Since $\det(AB) = \det(A)\det(B)$, and $\det(A), \det(B) \neq 0$, then $\det(AB) \neq 0$, and $AB \in GL_2(\R)$.
+\end{proof}
+\noindent\exercise{12} \\
+Let $\Z_2^n = \{(a_1, a_2, \ldots, a_n) : a_i \in \Z_2\}$, and a binary operation on $\Z_2^n$ by
+\[(a_1, a_2, \ldots, a_n) + (b_1, b_2, \ldots, b_n) = (a_1 + b_1, a_2 + b_2, \ldots, a_n + b_n)\]
+\begin{proof} $\group{\Z_2^n}{+}$ is a group. \\
+(Closed) Let $A, B \in \Z_2^n$. Then for each $i \in [n]$, $a_i + b_i \in \Z_2$, so $A + B \in \Z_2^n$. \\\\
+(Associative) Let $A, B, C \in \Z_2^n$. Then
+\begin{align*}
+	(A + B) + C &= (a_1 + b_1, a_2 + b_2, \ldots, a_n + b_n) + C \\
+	&= (a_1 + b_1 + c_1, a_2 + b_2 + c_2, \ldots, a_n + b_n + c_n) \\
+	&= A + (b_1 + c_1, b_2 + c_2, \ldots, b_n + c_n) \\
+	&= A + (B + C)
+\end{align*}
+(Identity) The identity $\mathbf{0}$ is given by $(0, 0, \ldots, 0)$. We can see that for $A \in \Z_2^n$, $A + \mathbf{0} = \mathbf{0} + A = A$. \\\\
+(Inverse) Let $A \in \Z_2^n$. Then $A^{-1} = (-a_1, -a_2, \ldots, -a_n)$. It is straightforward to compute that $A + A^{-1} = \mathbf{0}$. \\\\
+Since $\group{\Z_2^n}{+}$ is closed, associative, has an identity and inverses, it is a group.
+\end{proof}
+\noindent\exercise{13}
+\begin{proof} $\R^* = \R \setminus \{0\}$ is a group under multiplication. \\
+The reals are closed under multiplication, and no two nonzero reals multiply to get zero. Multiplication over the reals is associative. 1 is the identity element, since $1 \cdot x = x \cdot 1 = 1$ for all $x \in \R^*$. The inverse of an element $x \in \R^*$ is given by $1/x$, since $x \cdot 1/x = 1$.
+\end{proof}
+\noindent\exercise{14} \\
+Given the groups $\R^*$ and $\Z$, let $G = \R^* \times \Z$. Define a binary operation $\circ$ on $G$ by $(a, m) \circ (b, n) = (ab, m + n)$.
+\begin{proof} $\group{G}{\circ}$ is a group. \\
+(Closed) Let $A, B \in G$ with $A = (a, m)$ and $B = (b, n)$. Then $A \circ B = (ab, m + n)$. Since $\R^*$ is closed under multiplication and $\Z$ is closed under addition, $G$ is closed. \\\\
+(Associatve) Let $A, B, C \in G$ with $A = (a, m)$, $B = (b, n)$, and $C = (c, p)$. Then 
+\begin{align*}
+	(A \circ B) \circ C &= (ab, m + n) \circ C \\
+	&= (abc, m + n + p) \\
+	&= A \circ (bc, n + p) \\
+	&= A \circ (B \circ C)
+\end{align*}
+(Identity) The identity is given by $(1, 0)$. We can see that for $A = (a, m) \in G$, $(1, 0) \circ A = (1 * a, 0 + m) = (a, m) = (a * 1, m + 0) = A \circ (1, 0)$. \\\\
+(Inverse) Let $A = (a, m) \in G$. The inverse $A^{-1}$ is given by $(1/a, -m)$. We can see that $A \circ A^{-1} = (a * 1/a, m - m) = (1, 0)$, and $A^{-1} \circ A = (1/a * a, -m + m) = (1, 0)$.
+Since $\group{G}{\circ}$ is closed, associative, has an identity and inverses, it is a group.
+\end{proof}
+\noindent\exercise{15} \\
+This is false; the symmetries of a triangle are nonabelian. \\\\
+\exercise{16} \\
+Consider the group of the symmetries of a triangle, and elements $\rho_1$ and $\mu_1$. Then $(\rho_1\mu_1)^2 = \mu_3^2 = id$, but $\rho_1^2\mu_1^2 = \rho_2id = \rho_2$. \\\\
+\exercise{17} \\
+Three examples of groups with eight elements are: $\group{\Z_8}{+}$, $D_4$, and $Q_8$. Firstly $\group{\Z_8}{+}$ is abelian, while $D_4$ and $Q_8$ are not. To compare $D_4$ and $Q_8$, we can look at the nontrivial proper subgroups. For $Q_8$, we have $\{1, -1\}, \{1, I, -1, -I\}, \{1, J, -1, -J\}$, and $\{1, K, -1, -K\}$. For $D_4$, we have $\{1, \rho_2\}, \{1, \mu_1\}, \{1, \delta_1\}, \{1, \mu_2\}, \{1, \delta_2\}, \{1, \rho_1, \rho_2, \rho_3\}, \{1, \rho_2, \mu_1, \mu_2\}$, and $\{1, \rho_2, \delta_1, \delta_2\}$. These subgroups are different, so the groups are different. \\\\
+\exercise{18}
+\begin{proof} There are $n!$ permutations of a set containing $n$ items. \\
+Let $\sigma = \begin{pmatrix} 1 & 2 & \cdots & n \\ a_1 & a_2 & \cdots & a_n \end{pmatrix}$. Then we have $n$ ways to choose $a_1$, $n - 1$ ways to choose $a_2$, \ldots, 2 ways to choose $a_{n - 1}$, and 1 way to choose $a_n$. Thus we have $(n)(n-1)\ldots(2)(1) = n!$ ways to permute $n$ items.
+\end{proof} 
+\noindent\exercise{19} \\
+Let $n \in \Z^+$ and $a \in \Z_n$. By definition of modular congruence, $x \equiv y \pmod{n} \iff n \mid (x - y)$. Since $n \mid 0$, $n \mid (0 + a - a)$, so $0 + a \equiv a \pmod{n}$. Similarly, $n \mid (a + 0 - a)$, so $a + 0 \equiv a \pmod{n}$. \\\\
+\exercise{20} \\
+Similar to above, $n \mid 0$ so $n \mid (a \cdot 1 - a) \iff a \cdot 1 \equiv a \pmod{n}$. \\\\
+\exercise{21} \\
+Let $b = n - a$. Then $n \mid n \iff n \mid (a + n - a - 0) \iff n \mid (a + b - 0) \iff a + b \equiv 0 \pmod{n}$. A similar argument shows $b + a \equiv 0 \pmod{n}$. \\\\
+\exercise{22} \\
+Let $a, b, c \in \Z_n$. Then $(a + b) + c \equiv x \pmod{n} \iff n \mid (a + b) + c - x \iff n \mid a + (b + c) - x \iff a + (b + c) \equiv x \pmod{n}$. We also have $(ab)c \equiv x \pmod{n} \iff n \mid (ab)c - x \iff n \mid a(bc) - x \iff a(bc) \equiv x \pmod{n}$. \\\\
+\exercise{23} \\
+We have $n \mid 0 \iff n \mid (ab + ac - (ab + ac)) \iff n \mid (a(b + c) - (ab + ac)) \iff a(b + c) \equiv ab + ac \pmod{n}$. \\\\
+\exercise{24}
+\textit{Note:} This proof uses the identity in exercise 26.
+\begin{proof} $ab^na^{-1} = (aba^{-1})^n$ for $n \in \Z$, where $a$ and $b$ are elements in a group $G$. \\
+Let $a, b \in G$. \\\\
+We will first show that the identity holds for $n \in \Z^+ \cup \{0\}$ by induction on $\Z^+ \cup \{0\}$. \\
+(Base Case): $n = 0$. Then $ab^0a^{-1} = aa^{-1} = e = (aba^{-1})^0$. \\
+(Inductive Step): Assume $ab^na^{-1} = (aba^{-1})^n$ for some $n \in \Z^+ \cup \{0\}$. We want to show that $ab^{n + 1}a^{-1} = (aba^{-1})^{n + 1}$. \\
+We have $(aba^{-1})^{n + 1} = (aba^{-1})^n(aba^{-1})$. Applying the inductive hypothesis, we have $(aba^{-1})^n(aba^{-1}) = ab^na^{-1}aba^{-1} = ab^nba^{-1} = ab^{n + 1}a^{-1}$, as desired. \\
+By the principle of mathematical induction, $ab^na^{-1} = (aba^{-1})^n$ for all $n \in \Z^+ \cup \{0\}$. \\\\
+Next, we will show that if $ab^na^{-1} = (aba^{-1})^n$ for some $n \in \Z^+ \cup \{0\}$, then $ab^{-n}a^{-1} = (aba^{-1})^{-n}$. We have $(aba^{-1})^{-n} = ((aba^{-1})^{-1})^n = ((a^{-1})^{-1}b^{-1}a^{-1})^n = (ab^{-1}a^{-1})^n = ab^{-n}a^{-1}$, as desired. \\\\
+Thus $ab^na^{-1} = (aba^{-1})^n$ for $n \in \Z$.
+\end{proof}
+\noindent\exercise{25}
+\begin{proof} For any $n > 2$, there exists $k \in U(n)$ such that $k^2 = 1$ and $k \neq 1$. \\
+Consider $k = n - 1$. Since $\gcd(n, n - 1) \mid (n - (n - 1)) \iff \gcd(n, n - 1) \mid 1$, we can conclude that $\gcd(n, n - 1) = 1$. Since $k$ is relatively prime to $n$, $k \in U(n)$. Then $k^2 = n^2 - 2n + 1$, so $k^2 \equiv 1 \pmod{n}$. If $k = 1$, then $n \mid (n - 2)$, forcing $n = 2$, contradicting $n > 2$. Therefore $k \neq 1$.
+\end{proof}
+\noindent\exercise{26}
+\begin{proof} $(g_1g_2\ldots g_{n-1}g_n)^{-1} = g_n^{-1}g_{n-1}^{-1}\ldots g_2^{-1}g_1^{-1}$ for all $n \in \Z^+$. \\
+We prove this by induction on $\Z^+$. \\
+(Base Case): $n = 1$. $g_1^{-1}=g_1^{-1}$. \\
+(Inductive Step): Assume $(g_1g_2\ldots g_{n-1}g_n)^{-1} = g_n^{-1}g_{n-1}^{-1}\ldots g_2^{-1}g_1^{-1}$ for some $n \in \Z^+$. We want to show that $(g_1g_2\ldots g_{n-1}g_ng_{n+1})^{-1} = g_{n+1}^{-1}g_n^{-1}g_{n-1}^{-1}\ldots g_2^{-1}g_1^{-1}$. We have $g_{n+1}^{-1}g_n^{-1}g_{n-1}^{-1}\ldots g_2^{-1}g_1^{-1} = g_{n+1}^{-1}(g_1g_2\ldots g_{n-1}g_n)^{-1} = (g_1g_2\ldots g_{n-1}g_ng_{n+1})^{-1}$, from the identity that $(ab)^{-1} = b^{-1}a^{-1}$.
+\end{proof}
+\noindent\exercise{27}
+\begin{proof} If $G$ is a group and $a, b \in G$, $xa = b$ has unique solutions in $G$. \\
+Suppose that $xa = b$. We must show that such an $x$ exists. Multiplying both sides of $xa = b$ by $a^{-1}$, we have $x = xe = xaa^{-1} = ba^{-1}$. To show uniqueness, suppose that $x_1$ and $x_2$ are both solutions of $xa = b$; then $x_1a = b = x_2a$. So $x_1 = x_1aa^{-1} = x_2aa^{-1} = x_2$.
+\end{proof}
+\noindent\exercise{28} \\
+\textit{Note:} I really don't want to do this proof because it's straightforward and boring, sorry :/ \\\\
+\exercise{29}
+\begin{proof} $ab = ac \implies b = c$ and $ba = ca \implies b = c$ for $a, b, c \in G$ in a group $G$. \\
+Start with $ab = ac$. Multiply the left sides by $a^{-1}$, giving $a^{-1}ab = a^{-1}ac \implies b = c$. A similar argument follows for the other case.
+\end{proof}
+\noindent\exercise{30}
+\begin{proof} For a group $G$, if $a^2 = e$ for all $a \in G$, then $G$ is abelian. \\
+Assume $a^2 = e$ for all $a \in G$. Let $a, b \in G$. Since $(ab)^2 = e$, it follows that $(ab)(ab) = e$. Then $baba = e$. Multiplying by $b$ on the left and $a$ on the right, we get that $ab = ba$. Since $a$ and $b$ commute, then $G$ is abelian.
+\end{proof}
+\noindent\exercise{31}
+\begin{proof} If $G$ is a finite group of even order, then there exists an $a \in G$ such that $a \neq e$ and $a^2 = e$. \\
+Assume for the sake of contradiction that no $a \in G$ satisfies $a \neq e$ and $a^2 = e$. Partition $G \setminus \{e\}$ into sets of $a$ and its inverse. Since $a \neq a^{-1}$, these sets all have two elements. However, the number of elements in $G \setminus \{e\}$ is odd, so there is no way we were able to partition all elements into sets. Therefore there must exist an element $a \in G$ such that $a^2 = e$.
+\end{proof}
+\noindent\exercise{32}
+\begin{proof} If $G$ is a group, and $(ab)^2 = a^2b^2$ for all $a, b \in G$, then $G$ is abelian. \\
+Let $a, b \in G$. Since $(ab)^2 = abab = aabb$, we can multiply the left side by $a^{-1}$ and the right side by $b^{-1}$ to get that $ba = ab$, so $G$ is abelian.
+\end{proof}
+\noindent\exercise{33} \\
+The subgroups of $\Z_3 \times \Z_3$ are $\{(0, 0)\}$, $\{(0, 0), (0, 1), (0, 2)\}$, $\{(0, 0), (1, 0), (2, 0)\}$, $\{(0, 0), (1, 1), (2, 2)\}$, $\{(0, 0), (1, 2), (2, 1)\}$, and $\Z_3 \times \Z_3$. \\
+The subgroups of $\Z_9$ are $\{0\}$, $\{0, 3, 6\}$, and $\Z_9$. \\\\
+\exercise{34} \\
+The subgroups of the symmetry group of an equilateral triangle are $\{id\}$, $\{id, \mu_1\}$, $\{id, \mu_2\}$, $\{id, \mu_3\}$, $\{id, \rho_1, \rho_2\}$, and the whole group. \\\\
+\exercise{35} \\
+Just like in exercise 17, we have $\{1\}$, $\{1, \rho_2\}, \{1, \mu_1\}, \{1, \delta_1\}, \{1, \mu_2\}, \{1, \delta_2\}, \{1, \rho_1, \rho_2, \rho_3\}, \{1, \rho_2, \mu_1, \mu_2\}$, $\{1, \rho_2, \delta_1, \delta_2\}$, and the whole group. \\\\
+\exercise{36}
+\begin{proof} $H = \{2^k : k \in \Z\}$ is a subgroup of $\Q^*$. \\
+We have $k = 0$ gives $2^0 = 1 \in H$. Let $a, b \in H$, with $a = 2^m$ and $b = 2^n$ for some $m, n \in \Z$. Then $ab^{-1} = 2^{m}2^{-n} = 2^{m - n} \in H$. Thus $H$ is a subgroup of $\Q^*$. 
+\end{proof}
+\noindent\exercise{37} \\
+Let $n \geq 0$ and $n\Z = \{nk : k \in \Z\}$.
+\begin{proof} $n\Z$ is a subgroup of $\Z$, and these subgroups are the only subgroups. \\
+We have $k = 0$ gives $n \cdot 0 = 0 \in n\Z$. Let $a, b \in n\Z$ with $a = nk$ and $b = nl$ for some $k, l \in \Z$. Then $a - b = nk - nl = n(k - l) \in n\Z$. \\\\
+Let $H$ be a subgroup of $\Z$. We will show that $H = n\Z$ for some $n \geq 0$. If $H = \{0\}$ then $H = 0\Z$. Otherwise, $H$ contains some positive integer. Since $H$ is a subset of $\Z$, by the well-ordering principle, $H$ contains a smallest positive integer. Call this integer $n$. \\
+We will show that $H = n\Z$. \\
+($\supseteq$) Since $H$ is a subgroup of $\Z$, it is closed under addition. Since $n \in H$, $nk \in H$ for all $k \in \Z$. \\
+($\subseteq$) Let $m \in H$. Then we can use the division algorithm to write $m = qn + r$ with $0 \leq r < n$. Since $H$ is closed under subtraction, $r = m - qn \in H$. Since $n$ was the smallest positive integer of $H$, $r$ must be 0. Therefore $m \in n\Z$. \\
+Therefore, $H = n\Z$, and since $H$ was an arbitrary subgroups of $\Z$, all subgroups are in the form $n\Z$.
+\end{proof}
+\noindent\exercise{38}
+\begin{proof} $\mathbb{T} = \{z \in \C^* : |z| = 1\}$ is a subgroup of $\C^*$. \\
+The identity $z = 1 + 0i \in \mathbb{T}$. Let $z, w \in \mathbb{T}$ with $z = a + bi$ and $w = c + di$. Then $zw^{-1} = \displaystyle\frac{(a + bi)(c - di)}{c^2 + d^2} = (a + bi)(c - di) = (ac + bd) + (bc - ad)i$. \\
+We can see that $|zw^{-1}| = \sqrt{(ac + bd)^2 + (bc - ad)^2} = \sqrt{(a^2 + b^2)(c^2 + d^2)} = 1$, so $zw^{-1} \in \mathbb{T}$.
+\end{proof}
+\noindent\exercise{39} \\
+Let $G$ consist of the $2 \times 2$ matrices of the form $\begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$, where $\theta \in \R$.
+\begin{proof} $G$ is a subgroup of $SL_2(\R)$. \\
+We have $\theta = 0$ gives $I \in G$. Let $A, B \in G$ with $A$ given by $\theta$ and $B$ given by $\phi$. Then 
+\begin{align*}
+	AB^{-1} &= \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}
+	\begin{bmatrix} \cos\phi & \sin\phi \\ -\sin\phi & \cos\phi \end{bmatrix} \\
+	&= \begin{bmatrix} \cos\theta\cos\phi + \sin\theta\sin\phi & \cos\theta\sin\phi - \sin\theta\cos\phi \\
+	\sin\theta\cos\phi - \cos\theta\sin\phi & \sin\theta\sin\phi + \cos\theta\cos\phi \end{bmatrix} \\
+	&= \begin{bmatrix} \cos(\theta - \phi) & -\sin(\theta - \phi) \\ \sin(\theta - \phi) & \cos(\theta - \phi) \end{bmatrix} \in G
+\end{align*}
+\end{proof}
+\noindent\exercise{40}
+\begin{proof} $G = \{a + b\sqrt2 : a, b \in \Q \text{ and } a, b \neq 0\}$ is a subgroup of $\R^*$ under multiplication. \\
+We have $a = 1, b = 0$ is the identity and is in $G$. Let $A, B \in G$ with $A = a + q\sqrt2$ and $B = b + r\sqrt2$. Then $AB^{-1} = \displaystyle\frac{(a + q\sqrt2)(b - r\sqrt2)}{b^2 - 2r^2} = \frac{ab - 2rq}{b^2 - 2r^2} + \frac{bq - ar}{b^2 - 2r^2}\sqrt2 \in G$.
+\end{proof}
+\end{document}
