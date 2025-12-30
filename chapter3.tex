@@ -263,7 +263,7 @@ Start with $ab = ac$. Multiply the left sides by $a^{-1}$, giving $a^{-1}ab = a^
 \end{proof}
 \noindent\exercise{30}
 \begin{proof} For a group $G$, if $a^2 = e$ for all $a \in G$, then $G$ is abelian. \\
-Assume $a^2 = e$ for all $a \in G$. Let $a, b \in G$. Since $(ab)^2 = e$, it follows that $(ab)(ab) = e$. Then $baba = e$. Multiplying by $b$ on the left and $a$ on the right, we get that $ab = ba$. Since $a$ and $b$ commute, then $G$ is abelian.
+Assume $a^2 = e$ for all $a \in G$. Let $a, b \in G$. Since $(ab)^2 = e$, it follows that $(ab)(ab) = e$. Then $abab = e$. Multiplying by $a$ on the left and $b$ on the right, we get that $ba = ab$. Since $a$ and $b$ commute, then $G$ is abelian.
 \end{proof}
 \noindent\exercise{31}
 \begin{proof} If $G$ is a finite group of even order, then there exists an $a \in G$ such that $a \neq e$ and $a^2 = e$. \\
@@ -315,4 +315,44 @@ We have $\theta = 0$ gives $I \in G$. Let $A, B \in G$ with $A$ given by $\theta
 \begin{proof} $G = \{a + b\sqrt2 : a, b \in \Q \text{ and } a, b \neq 0\}$ is a subgroup of $\R^*$ under multiplication. \\
 We have $a = 1, b = 0$ is the identity and is in $G$. Let $A, B \in G$ with $A = a + q\sqrt2$ and $B = b + r\sqrt2$. Then $AB^{-1} = \displaystyle\frac{(a + q\sqrt2)(b - r\sqrt2)}{b^2 - 2r^2} = \frac{ab - 2rq}{b^2 - 2r^2} + \frac{bq - ar}{b^2 - 2r^2}\sqrt2 \in G$.
 \end{proof}
+\noindent\exercise{41}
+Let $G$ be the group of $2 \times 2$ matrices under addition.
+\begin{proof} $H = \left\{\begin{bmatrix} a & b \\ c & d \end{bmatrix} : a + d = 0 \right\}$ is a subgroup of $G$. \\
+The matrix $\begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \in H$ is the identity element. If you have two matrices $A = \begin{bmatrix} a & x \\ y & -a \end{bmatrix}$ and $B = \begin{bmatrix} b & z \\ w & -b \end{bmatrix}$, then $A - B = \begin{bmatrix} a - b & x - z \\ y - w & b - a \end{bmatrix}$ and we can see that $a - b + b - a = 0$ so $A - B \in H$.
+\end{proof}
+\noindent\exercise{42}
+\begin{proof} $SL_2(\Z)$ is a subgroup of $SL_2(\R)$. \\
+The matrix $I$ is in $SL_2(\Z)$ and serves as the identity. To show that for any $A, B \in SL_2(\Z)$ that $AB^{-1} \in SL_2(\Z)$, we can observe that the inverse of $B$ is given by $B^{-1} = \displaystyle\frac{1}{\det B}\begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$, but since $\det B = 1$, $B^{-1}$ only has integer coefficients. We can then convince ourselves that $AB^{-1} \in SL_2(\Z)$.
+\end{proof}
+\noindent\exercise{43} \\
+Like in exercise 17, the subgroups of $Q_8$ are $\{1\}$, $\{1, -1\}, \{1, I, -1, -I\}, \{1, J, -1, -J\}$, $\{1, K, -1, -K\}$, and $Q_8$. \\\\
+\exercise{44} \\
+Let $H_1$ and $H_2$ be subgroup of $G$.
+\begin{proof} $H_1 \cap H_2$ is a subgroup of $G$. \\
+Since $H_1$ and $H_2$ are both subgroups of $G$, we know that the identity $e$ is in both subgroups, so $e \in H_1 \cap H_2$. \\
+Let $g, h \in H_1 \cap H_2$. We want to show that $gh^{-1} \in H_1$ and $gh^{-1} \in H_2$. Since $g, h \in H_1 \cap H_2$, then $g, h \in H_1$. Since $H_1$ is a group, $gh^{-1} \in H_1$ under closure. A similar argument follows for $H_2$.
+\end{proof}
+\noindent\exercise{45} \\
+\textbf{Claim:} If $H$ and $K$ are subgroups of a group $G$, then $H \cup K$ is a subgroup of $G$.
+\begin{proof} This is false. \\
+Consider the subgroups of the symmetries of a triangle. Two such subgroups are $\{id, \mu_1\}$ and $\{id, \mu_2\}$. We can see that the union $\{id, \mu_1, \mu_2\}$ is not a subgroup since $\mu_1\mu_2^{-1} = \rho_2 \notin \{id, \mu_1, \mu_2\}$.
+\end{proof}
+\noindent\exercise{46} \\
+\textit{Note:} I'm lazy and I don't want to do the proof that it is false if $G$ is not abelian. Consider $S_3$.
+\textbf{Claim:} If $H$ and $K$ are subgroups of a group $G$, then $HK = \{hk : h \in H \text{ and } k \in K\}$ is a subgroup of $G$.
+\begin{proof} If $G$ is abelian, the claim is true. \\
+Assume $G$ is abelian. Consider arbitrary $H$ and $K$ that are subgroups of $G$. Since $e \in H$ and $e \in K$, then $ee = e \in HK$. Then consider $g = ab, h = cd \in HK$. We see that $gh^{-1} = abd^{-1}c^{-1}$. Since $G$ is abelian, this is equal to $ac^{-1}bd^{-1} \in HK$, as desired.
+\end{proof}
+\noindent\exercise{47} \\
+Let $G$ be a group and $Z(G) = \{x \in G : gx = xg \text{ for all } g \in G\}$.
+\begin{proof} $Z(G)$ is a subgroup of $G$. \\
+We can see that $id \in Z(G)$ because $id \circ g = g \circ id = g$ for all $g \in G$. Suppose $a, b \in Z(G)$. Let $g \in G$. Then $ab^{-1}g = agb^{-1}$ because $b \in \Z(G)$ and $agb^{-1} = gab^{-1}$ because $a \in Z(G)$.
+\end{proof}
+\noindent\exercise{48}
+\begin{proof} Let $a, b \in G$. If $a^4b = ba$ and $a^3 = e$, then $ab = ba$. \\
+We can see that $a^4b = ba \iff a^3ab = ba \iff eab = ba \iff ab = ba$. 
+\end{proof}
+\noindent\exercise{49} \\
+$\group{\Z}{+}$ is an infinite group and $n\Z$ are the only subgroups of $\Z$, and are infinite (besides $\{0\}$, which is trivial) by exercise 37. \\\\
+\exercise{50}
 \end{document}
