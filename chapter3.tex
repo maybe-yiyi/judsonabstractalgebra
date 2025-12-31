@@ -354,5 +354,28 @@ We can see that $a^4b = ba \iff a^3ab = ba \iff eab = ba \iff ab = ba$.
 \end{proof}
 \noindent\exercise{49} \\
 $\group{\Z}{+}$ is an infinite group and $n\Z$ are the only subgroups of $\Z$, and are infinite (besides $\{0\}$, which is trivial) by exercise 37. \\\\
-\exercise{50}
+\exercise{50} \\
+\textit{Note:} I don't know how to do this problem :D \\\\
+\exercise{51}
+\begin{proof} If $xy = x^{-1}y^{-1}$ for all $x, y \in G$, then $G$ must be abelian. \\
+Let $a, b \in G$. We can see that $ab = (b^{-1}a^{-1})^{-1} = (ab)^{-1} = b^{-1}a^{-1}$. Finally, we apply the assumption, so $ab = ba$.
+\end{proof}
+\noindent\exercise{52}
+\begin{proof} If $(xy)^2 = xy$ for all $x, y \in G$, then $G$ must be abelian. \\
+We can see that $xy = e$ for all $x, y \in G$. Taking $x = e$, we can see that $y = e$ for all $y \in G$. Therefore $G = \{e\}$, and since the trivial group is abelian, $G$ is abelian.
+\end{proof}
+\noindent\exercise{53} \\
+\textbf{Claim:} If $G$ is a nonabelian group, then every nontrivial subgroup of $G$ is nonabelian.
+\begin{proof} This is false. \\
+Consider the symmetries of a triangle. We know that it is nonabelian. However, consider the rotation subgroup $\{e, \rho_1, \rho_2\}$. We can verify this subgroup is abelian, since $\rho_1\rho_2 = \rho_2\rho_1$.
+\end{proof}
+\noindent\exercise{54} \\
+Let $H$ be a subgroup of $G$ and \[C(H) = \{g \in G : gh = hg \text{ for all } h \in H\}\]
+\begin{proof} $C(H)$ is a subgroup of $G$. \\
+We can see that $eh = he = h$ for all $h \in H$, so $e \in C(H)$. Let $a, b \in C(H)$, and let $h \in H$. Then $ab^{-1}h = ahb^{-1}$ because $h \in H$, and likewise $ahb^{-1} = hab^{-1}$. Since $ab^{-1}h = hab^{-1}$, $ab^{-1} \in C(H)$.
+\end{proof}
+\noindent\exercise{55}
+\begin{proof} If $H$ is a subgroup of $G$, and $g \in G$, then $gHg^{-1}$ is also a subgroup of $G$. \\
+We know that $e \in H$, so $geg^{-1} = e \in gHg^{-1}$. Let $a, b \in gHg^{-1}$ with $a = gxg^{-1}$ and $b = gyg^{-1}$. Then $ab^{-1} = gxg^{-1}gy^{-1}g^{-1} = gxy^{-1}g^{-1}$, and since $xy^{-1} \in H$ because $H$ is a group, then $ab^{-1} \in gHg^{-1}$.
+\end{proof}
 \end{document}
